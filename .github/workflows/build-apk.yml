@@ -28,12 +28,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Install Android SDK components
         run: |
-          sdkmanager "platforms;android-33" "build-tools;33.0.2"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
       - name: Grant execute permission to Gradle
         run: chmod +x ./gradlew
