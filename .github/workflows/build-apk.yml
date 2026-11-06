@@ -33,6 +33,9 @@ jobs:
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
+      - name: Normalize Gradle wrapper line endings
+        run: sed -i 's/\r$//' ./gradlew
+
       - name: Grant execute permission to Gradle
         run: chmod +x ./gradlew
 
