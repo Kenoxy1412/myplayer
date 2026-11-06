@@ -53,7 +53,7 @@ android {
 		python {
 			version "3.10"
 
-			buildPython "C:\\Users\\Toshiba\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+			buildPython "python3"
 
 			pip {
 				install "yt-dlp[default]"
